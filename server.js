@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -7,7 +8,7 @@ require('dotenv').config();
 
 const connectDB = require('./config/db');
 const { setupChatSocket } = require('./socket/chatSocket');
-
+console.log("MONGO_URI:", process.env.MONGO_URI);
 // Import routes
 const authRoutes = require('./routes/auth');
 const itemRoutes = require('./routes/items');
